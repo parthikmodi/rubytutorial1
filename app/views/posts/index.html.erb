@@ -1,0 +1,13 @@
+<h2> Posts page</h2>
+
+<%= link_to "New post", posts_new_path %>
+
+<% @posts.each do |post|%>
+  <p>
+  [<%=post.id%>]  <%=post.title%> <%=post.body%>
+  </p>
+  <%= link_to "show", post %>
+  <%= link_to "edit", edit_path(post) %>
+  <%= link_to "Delete", posts_delete_path(post), method: :delete, data: {} %>
+
+<% end %>
