@@ -2,12 +2,25 @@
 
 <%= link_to "New post", posts_new_path %>
 
+<table border="1px solid black">
+  <tr>
+  <th>id</th>
+  <th>title</th>
+  <th>body</th>
+  <th>details</th>
+  <th>edit</th>
+  <th>delete</th>
+  </tr>
 <% @posts.each do |post|%>
+<tr>
   <p>
-  [<%=post.id%>]  <%=post.title%> <%=post.body%>
+  <td>[<%=post.id%>] </td><td> <%=post.title%></td><td> <%=post.body%></td>
   </p>
-  <%= link_to "show", post %>
-  <%= link_to "edit", edit_path(post) %>
-  <%= link_to "Delete", posts_delete_path(post), method: :delete%>
+  <td>
+  <%= link_to "show", post %></td>
+  <td><%= link_to "edit", edit_path(post) %></td>
+  <td><%= link_to "Delete", posts_delete_path(post), method: :delete%></td>
+  </tr>
 
 <% end %>
+</table>
